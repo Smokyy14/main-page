@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --color-bg: #0f172a; /* Azul oscuro y elegante para el fondo */
+  --color-bg-light: #1e293b; /* Un poco más claro para las "tarjetas" */
+  --color-primary: #108b1a; /* Púrpura vibrante como color principal */
+  --color-accent: #f4c542; /* Mantenemos tu amarillo para acentos */
+  --color-text: #e2e8f0; /* Un blanco suave para el texto, cansa menos la vista */
+  --color-text-dark: #94a3b8; /* Un gris para texto secundario */
+  --color-border: #140520;
+  --color-contact-border: #4b0326;
+  --color-contact: #0e0316;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-align: center;
+}
+
+/* --- Hero Section --- */
+.hero {
+  padding: 120px 20px;
+  background: linear-gradient(180deg, var(--color-bg-light), var(--color-bg)); /* Degradado sutil */
+}
+
+.hero h1 {
+  font-size: 3.5rem; /* Ligeramente más pequeño para mejor balance */
+  font-weight: 700;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  font-weight: 300; /* Más liviano para que no compita con el H1 */
+  margin-top: 15px;
+}
+
+.highlight {
+  color: rgb(250, 252, 134); /* Blanco puro para el nombre */
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+/* --- Contenido Principal --- */
+.main-content {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Esta es la "tarjeta" que agrupa todo.
+  Tener un max-width evita que se estire demasiado en pantallas grandes.
+*/
+.content-wrapper {
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 16px; /* Bordes más sutiles */
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Espacio entre la info y los botones */
+}
+
+.info p {
+  font-size: 1.1rem;
+  line-height: 1.7; /* Más espacio entre líneas para leer mejor */
+  color: var(--color-text-dark);
+}
+
+/* --- Botones --- */
+.buttons {
+  display: flex;
+  flex-direction: column; /* Apilados por defecto */
+  gap: 20px;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 18px 30px;
+  border-radius: 12px; /* Bordes más modernos */
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-3px); /* Efecto sutil de "levantarse" */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Colores de botones definidos y consistentes */
+.btn.primary {
+  background-color: var(--color-primary);
+}
+
+.btn.secondary {
+  background-color: var(--color-border);
+}
+
+.btn.tertiary {
+  background-color: var(--color-contact);
+  border: 2px solid var(--color-contact-border);
+}
+
+/* --- Footer --- */
+footer {
+  padding: 30px 0;
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    flex-direction: row; /* Lado a lado en pantallas grandes */
+    align-items: center;
+    text-align: left;
+  }
+  .info {
+    flex: 1; /* Ocupa el espacio disponible */
+  }
+  .buttons {
+    flex: 0 0 250px; /* Ancho fijo para la columna de botones */
+  }
+}
