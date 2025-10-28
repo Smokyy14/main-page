@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (moonbotButton) {
     moonbotButton.addEventListener('click', () => {
-      window.location.href = '/main-page/moonbot';
+      window.location.href = 'moonbot';
     });
   }
 
@@ -24,4 +24,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
 
