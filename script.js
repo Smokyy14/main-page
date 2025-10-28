@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (moonbotButton) {
     moonbotButton.addEventListener('click', () => {
-      window.location.href = '/moonbot';
+      window.location.href = 'main-page/moonbot';
     });
   }
 
@@ -21,5 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open('https://wa.me/59895609705', '_blank');
   });
 }
+
 
 });
