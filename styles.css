@@ -1,138 +1,227 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
+/* Your color variables */
 :root {
-  --color-bg: #0f172a; /* Azul oscuro y elegante para el fondo */
-  --color-bg-light: #1e293b; /* Un poco más claro para las "tarjetas" */
-  --color-primary: #108b1a; /* Púrpura vibrante como color principal */
-  --color-accent: #f4c542; /* Mantenemos tu amarillo para acentos */
-  --color-text: #e2e8f0; /* Un blanco suave para el texto, cansa menos la vista */
-  --color-text-dark: #94a3b8; /* Un gris para texto secundario */
-  --color-border: #140520;
-  --color-contact-border: #4b0326;
-  --color-contact: #0e0316;
+    --color-bg: #0f172a;
+    --color-bg-light: #1e293b;
+    --color-primary: #108b1a;
+    --color-accent: #f4c542;
+    --color-text: #e2e8f0;
+    --color-text-dark: #94a3b8;
+    --color-border: #140520;
+    --color-contact-border: #4b0326;
+    --color-contact: #0e0316;
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  text-align: center;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    text-align: center;
 }
 
 /* --- Hero Section --- */
 .hero {
-  padding: 120px 20px;
-  background: linear-gradient(180deg, var(--color-bg-light), var(--color-bg)); /* Degradado sutil */
+    padding: 100px 20px 60px;
+    background: linear-gradient(180deg, var(--color-bg-light), var(--color-bg));
 }
 
 .hero h1 {
-  font-size: 3.5rem; /* Ligeramente más pequeño para mejor balance */
-  font-weight: 700;
+    font-size: 3.5rem;
+    font-weight: 700;
 }
 
 .hero h2 {
-  font-size: 1.5rem;
-  color: var(--color-text-dark);
-  font-weight: 300; /* Más liviano para que no compita con el H1 */
-  margin-top: 15px;
+    font-size: 1.5rem;
+    color: var(--color-text-dark);
+    font-weight: 300;
+    margin-top: 15px;
 }
 
 .highlight {
-  color: rgb(250, 252, 134); /* Blanco puro para el nombre */
+    color: rgb(250, 252, 134);
 }
 
 .accent {
-  color: var(--color-accent);
+    color: var(--color-accent);
 }
 
-/* --- Contenido Principal --- */
+/* --- Main Content Layout --- */
 .main-content {
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
 }
 
-/* Esta es la "tarjeta" que agrupa todo.
-  Tener un max-width evita que se estire demasiado en pantallas grandes.
-*/
+.contact-section-wrapper {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    padding-left: 80px; 
+}
+
+.contact-title {
+    font-size: 1.3rem;  
+    font-weight: 1; 
+    position: absolute;
+    left: -55px;      
+    top: 35px;        
+    white-space: nowrap;
+    color: var(--color-text-dark); 
+}
+
 .content-wrapper {
-  background-color: var(--color-bg-light);
-  border: 1px solid var(--color-border);
-  border-radius: 16px; /* Bordes más sutiles */
-  padding: 40px;
-  max-width: 800px;
-  width: 100%;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
-  display: flex;
-  flex-direction: column;
-  gap: 40px; /* Espacio entre la info y los botones */
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.info {
+    flex: 1;
+    text-align: left;
 }
 
 .info p {
-  font-size: 1.1rem;
-  line-height: 1.7; /* Más espacio entre líneas para leer mejor */
-  color: var(--color-text-dark);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-dark);
 }
 
-/* --- Botones --- */
+/* --- Social Icons (UPDATED) --- */
+.social-icons-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px; /* Rounded square for GitHub */
+    transition: transform 0.2s ease;
+    background-color: #333; /* Default background for GitHub */
+}
+
+/* The WhatsApp button is now a container for the image */
+.social-btn.whatsapp {
+    background-color: transparent; /* No background color needed */
+    border-radius: 50%;           /* Make the container circular */
+}
+
+/* Style for the WhatsApp PNG image */
+.social-btn.whatsapp img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Ensures the image itself is perfectly round */
+    object-fit: cover;
+}
+
+.social-btn svg {
+    fill: white;
+    width: 28px;
+    height: 28px;
+}
+
+.social-btn:hover {
+    transform: scale(1.1);
+}
+
+
+/* --- Buttons --- */
 .buttons {
-  display: flex;
-  flex-direction: column; /* Apilados por defecto */
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 0 250px;
 }
 
 .btn {
-  border: none;
-  color: white;
-  padding: 18px 30px;
-  border-radius: 12px; /* Bordes más modernos */
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;
+    border: none;
+    color: white;
+    padding: 18px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
 }
 
 .btn:hover {
-  transform: translateY(-3px); /* Efecto sutil de "levantarse" */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Colores de botones definidos y consistentes */
 .btn.primary {
-  background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
 
 .btn.secondary {
-  background-color: var(--color-border);
+    background-color: var(--color-border);
 }
 
 .btn.tertiary {
-  background-color: var(--color-contact);
-  border: 2px solid var(--color-contact-border);
+    background-color: var(--color-contact);
+    border: 2px solid var(--color-contact-border);
 }
 
 /* --- Footer --- */
 footer {
-  padding: 30px 0;
-  font-size: 0.9rem;
-  color: var(--color-text-dark);
+    padding: 30px 0;
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
 }
 
-@media (min-width: 768px) {
-  .content-wrapper {
-    flex-direction: row; /* Lado a lado en pantallas grandes */
-    align-items: center;
-    text-align: left;
-  }
-  .info {
-    flex: 1; /* Ocupa el espacio disponible */
-  }
-  .buttons {
-    flex: 0 0 250px; /* Ancho fijo para la columna de botones */
-  }
+/* --- Responsive Media Query --- */
+@media (max-width: 900px) {
+    .contact-section-wrapper {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-title {
+        position: static;
+        margin-bottom: 25px;
+    }
+
+    .social-icons-column {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        margin-bottom: 25px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .info {
+        text-align: center;
+    }
+    
+    .buttons {
+        width: 100%;
+        max-width: 300px;
+    }
 }
