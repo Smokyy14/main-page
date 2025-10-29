@@ -6,23 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (moonbotButton) {
     moonbotButton.addEventListener('click', () => {
-      window.location.href = 'moonbot';
+      window.location.href = '/moonbot'; // Al subir a GitHub sacar el /
     });
   }
 
   if (githubButton) {
     githubButton.addEventListener('click', () => {
-      window.open('https://github.com/Smokyy14', '_blank');
+      window.open('https://github.com/Smokyy14/discord.js-bot', '_blank');
     });
   }
 
   if (contactButton) {
   contactButton.addEventListener('click', () => {
-    window.open('https://wa.me/59895609705', '_blank');
+    window.open('https://ko-fi.com/smokyydev', '_blank');
   });
 }
 
-
 });
-
-
