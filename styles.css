@@ -5,7 +5,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* Your color variables */
 :root {
     --color-bg: #0f172a;
     --color-bg-light: #1e293b;
@@ -24,7 +23,6 @@ body {
     text-align: center;
 }
 
-/* --- Hero Section --- */
 .hero {
     padding: 100px 20px 60px;
     background: linear-gradient(180deg, var(--color-bg-light), var(--color-bg));
@@ -50,7 +48,6 @@ body {
     color: var(--color-accent);
 }
 
-/* --- Main Content Layout --- */
 .main-content {
     display: flex;
     justify-content: center;
@@ -98,7 +95,6 @@ body {
     color: var(--color-text-dark);
 }
 
-/* --- Social Icons (UPDATED) --- */
 .social-icons-column {
     display: flex;
     flex-direction: column;
@@ -115,22 +111,20 @@ body {
     align-items: center;
     width: 50px;
     height: 50px;
-    border-radius: 12px; /* Rounded square for GitHub */
+    border-radius: 12px; 
     transition: transform 0.2s ease;
-    background-color: #333; /* Default background for GitHub */
+    background-color: #333; 
 }
 
-/* The WhatsApp button is now a container for the image */
 .social-btn.whatsapp {
-    background-color: transparent; /* No background color needed */
-    border-radius: 50%;           /* Make the container circular */
+    background-color: transparent; 
+    border-radius: 50%;           
 }
 
-/* Style for the WhatsApp PNG image */
 .social-btn.whatsapp img {
     width: 100%;
     height: 100%;
-    border-radius: 50%; /* Ensures the image itself is perfectly round */
+    border-radius: 50%; 
     object-fit: cover;
 }
 
