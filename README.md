@@ -1,3 +1,3 @@
-### My page
+## My page
 
-## Made with love (and Gemini, 'cause ChatGPT sucks in FrontEnd)
+### Made with love (and Gemini, 'cause ChatGPT sucks in FrontEnd)
