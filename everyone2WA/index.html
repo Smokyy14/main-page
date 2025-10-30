@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Everyone2WA</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Everyone2WA</h1>
+    <p class="subtitle">¡Crea mensajes @everyone para tu grupo de WhatsApp!</p>
+
+    <div class="form">
+      <div class="search-country">
+        <input type="text" id="buscarPais" placeholder="Buscar país...">
+        <select id="codigoPais"></select>
+      </div>
+
+      <input 
+        type="text" 
+        id="numero" 
+        placeholder="Ingrese su número aquí..." 
+        inputmode="numeric" 
+        pattern="[0-9]*">
+
+      <input type="text" id="grupo" placeholder="Ingrese el enlace de su grupo aquí...">
+
+      <button id="crearBtn" disabled>Crear</button>
+    </div>
+
+    <div class="footer">
+      Created by Smoky14
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
