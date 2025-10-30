@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; 
+    background-color: #1A1A2E; 
+    color: #333; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px; 
+}
+
+h1 {
+    color: #FFFFFF;
+    font-size: 3.5rem; 
+    text-align: center;
+    font-weight: 700; 
+    margin-bottom: 2.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem; 
+}
+
+.project-card {
+    padding: 1.5rem;
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.project-card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #3B3B3B; 
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.5; 
+    color: #555555; 
+}
+
+.project-card a {
+    color: #4A4A9B;
+    text-decoration: none; 
+    font-weight: bold;
+    display: inline-block; 
+    margin-top: 1rem;
+}
+
+.project-card a:hover {
+    text-decoration: underline; 
+}
+
+/* --- COLORES DE FONDO DE TARJETAS --- */
+.card-color-1 {
+    background-color: #a0ff74; 
+}
+
+.card-color-2 {
+    background-color: #2a700a; 
+}
+
+.card-color-3 {
+    background-color: #91f179; 
+}
+
+.card-color-4 {
+    background-color: #5bd7e7; 
+}
+
+.card-color-5 {
+    background-color: #4a0f66; 
+}
+
+.card-color-6 {
+    background-color: #0f172a; 
+}
+
+
+.project-card.text-light h2 {
+    color: #FFFFFF; 
+}
+.project-card.text-light p {
+    color: #E0E0E0; 
+}
+.project-card.text-light a {
+    color: #BBDAFF; 
+}
+.project-card.text-light a:hover {
+    color: #FFFFFF; 
+}
+
+/* --- SECCIÓN RESPONSIVE --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
