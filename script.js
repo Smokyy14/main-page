@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const moonbotButton = document.querySelector('.btn.primary');
-  const githubButton = document.querySelector('.btn.secondary');
+  const projectsButton = document.querySelector('.btn.secondary');
   const contactButton = document.querySelector('.btn.tertiary');
 
   if (moonbotButton) {
     moonbotButton.addEventListener('click', () => {
-      window.location.href = '/moonbot';
+      window.open('/moonbot', '_blank');
     });
   }
 
-  if (githubButton) {
-    githubButton.addEventListener('click', () => {
-      window.open('https://github.com/Smokyy14', '_blank');
+  if (projectsButton) {
+    projectsButton.addEventListener('click', () => {
+      window.open('/projects', '_blank');
     });
   }
 
@@ -23,4 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 });
+
 
