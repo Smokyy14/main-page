@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (moonbotButton) {
     moonbotButton.addEventListener('click', () => {
-      window.open('/moonbot', '_blank');
+      window.open('./moonbot', '_blank');
     });
   }
 
   if (projectsButton) {
     projectsButton.addEventListener('click', () => {
-      window.open('/projects', '_blank');
+      window.open('./projects', '_blank');
     });
   }
 
@@ -23,5 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 });
+
 
 
