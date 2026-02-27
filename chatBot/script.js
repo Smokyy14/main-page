@@ -64,7 +64,7 @@ Si no hay intención de descarga, ambos campos "platform" y "url" deben ser null
         showLoading("Rosalina está pensando...");
 
         try {
-            const aiUrl = `https://delirius-apiofc.vercel.app/ia/gptprompt?text=${encodeURIComponent(text)}&prompt=${encodeURIComponent(SYSTEM_PROMPT)}`;
+            const aiUrl = `https://api.delirius.store/ia/gptprompt?text=${encodeURIComponent(text)}&prompt=${encodeURIComponent(SYSTEM_PROMPT)}`;
             const aiRes = await fetch(aiUrl);
             const aiData = await aiRes.json();
 
@@ -105,16 +105,16 @@ Si no hay intención de descarga, ambos campos "platform" y "url" deben ser null
         
         switch (plataforma) {
             case 'TikTok':
-                apiUrl = `https://delirius-apiofc.vercel.app/download/tiktok?url=${urlVideo}`;
+                apiUrl = `https://api.delirius.store/download/tiktok?url=${urlVideo}`;
                 break;
             case 'Twitter':
-                apiUrl = `https://delirius-apiofc.vercel.app/download/twitterv2?url=${urlVideo}`;
+                apiUrl = `https://api.delirius.store/download/twitterv2?url=${urlVideo}`;
                 break;
             case 'YouTubeVideo':
-                apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp4?url=${urlVideo}`;
+                apiUrl = `https://api.delirius.store/download/ytmp4?url=${urlVideo}`;
                 break;
             case 'YouTubeAudio':
-                apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp3?url=${urlVideo}`;
+                apiUrl = `https://api.delirius.store/download/ytmp3?url=${urlVideo}`;
                 break;
             default:
                 removeLoading();
