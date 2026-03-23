@@ -1,8 +1,8 @@
 :root {
     --bg: #292f3d;
-    --card: #20121e;
-    --primary: #5459ff;
-    --primary-dark: rgb(121, 5, 139);
+    --card: #ebd9fc;
+    --primary: #000000;
+    --primary-dark: rgb(143, 112, 147);
     --accent: #ff6584;
     --text: #ffffff
     --muted: #ffffff;
