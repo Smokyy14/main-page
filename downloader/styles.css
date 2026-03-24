@@ -23,6 +23,22 @@ body {
     color: var(--text);
 }
 
+.page-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px 16px;
+}
+
+.contact-card {
+    position: absolute;
+    right: calc(50% - 410px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .container {
     background: var(--card);
     border-radius: var(--radius);
@@ -260,6 +276,7 @@ h1 {
     line-height: 1;
 }
 
+
 .input-row {
     display: flex;
     gap: 8px;
@@ -300,6 +317,77 @@ h1 {
 #send-button:hover { background: var(--primary-dark); }
 #send-button:active { transform: scale(0.97); }
 
+/* Contact card */
+.contact-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px 20px;
+    width: 160px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.contact-sub {
+    font-size: 0.78rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.contact-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, opacity 0.15s;
+}
+
+.contact-btn:hover {
+    transform: scale(1.08);
+    opacity: 0.9;
+}
+
+.contact-btn svg {
+    width: 26px;
+    height: 26px;
+}
+
+.contact-btn.discord { background: #5865F2; }
+.contact-btn.whatsapp { background: #25D366; }
+
+@media (max-width: 700px) {
+    .page-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-card {
+        width: 100%;
+        max-width: 460px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 500px) {
-    .container { padding: 24px 14px 18px; border-radius: 0; min-height: 100vh; box-shadow: none; }
+    .container { padding: 24px 14px 18px; border-radius: 0; box-shadow: none; }
 }
