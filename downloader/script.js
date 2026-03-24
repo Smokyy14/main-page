@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function descargarComoBlob(url, fileName, btnEl) {
         try {
-            btnEl.textContent = '⏳ Descargando...';
+            btnEl.textContent = 'Descargando...';
             btnEl.style.pointerEvents = 'none';
 
             const res = await fetch(url, { referrerPolicy: 'no-referrer' });
@@ -71,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function detectarPlataforma(url) {
+        if (url.includes('pin.it')) return 'Pinterest';
+        if (url.includes('facebook.com')) return 'Facebook';
+        if (url.includes('threads.net')) return 'Threads';
         if (url.includes('tiktok.com')) return 'TikTok';
         if (url.includes('twitter.com') || url.includes('x.com')) return 'Twitter';
         if (url.includes('youtube.com') || url.includes('youtu.be')) return 'YouTube';
@@ -135,6 +138,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let apiUrl = '';
         switch (plataforma) {
+            case 'Pinterest':
+                apiUrl = `https://api.delirius.store/download/pinterestdl?url=${encodeURIComponent(urlVideo)}`;
+                break;
+            case 'Facebook':
+                apiUrl = `https://api.delirius.store/download/facebook?url=${encodeURIComponent(urlVideo)}`;
+                break;
+            case 'Threads':
+                 apiUrl = `https://api.delirius.store/download/threads?url=${encodeURIComponent(urlVideo)}`;
+                break;
             case 'TikTok':
                 apiUrl = `https://api.delirius.store/download/tiktok?url=${encodeURIComponent(urlVideo)}`;
                 break;
@@ -198,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const card = document.createElement('div');
                     card.className = 'video-download-card';
-                    card.innerHTML = `<div class="card-info"><div class="card-badge">Instagram · ${item.type === 'video' ? '🎬 Video' : '🖼️ Imagen'} ${i + 1}</div></div>`;
+                    card.innerHTML = `<div class="card-info"><div class="card-badge">Instagram · ${item.type === 'video' ? 'Video' : 'Imagen'} ${i + 1}</div></div>`;
                     card.querySelector('.card-info').appendChild(crearBotonDescarga(item.url, fileName));
 
                     const msgDiv = document.createElement('div');
@@ -210,6 +222,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+        else if (plataforma === 'Pinterest') {
+            if (!json.status) { addMessage('Error al procesar el link de Pinterest.', 'bot'); return; }
+                downloadUrl = json.data?.download?.url;
+                title = json.data?.title || title;
+                thumbnail = json.data?.thumbnail || null;
+                extension = json.data?.download?.type === 'video' ? 'mp4' : 'jpg';
+                badge = 'Pinterest';
+            }
+
+        else if (plataforma === 'Facebook') {
+            if (!json.urls?.length) { addMessage('Error al procesar el link de Facebook.', 'bot'); return; }
+                downloadUrl = json.urls[0]?.hd || json.urls[1]?.sd;
+                title = json.title || title;
+                extension = 'mp4';
+                badge = json.isHdAvailable ? 'Facebook · HD' : 'Facebook · SD';
+            }
+
+        else if (plataforma === 'Threads') {
+            if (!json.status || !json.data?.length) { addMessage('Error al procesar el link de Threads.', 'bot'); return; }
+                json.data.forEach((item, i) => {
+                    const ext = item.type === 'video' ? 'mp4' : 'jpg';
+                    const fileName = `threads_${i + 1}.${ext}`;
+                    const card = document.createElement('div');
+                    card.className = 'video-download-card';
+                    const info = document.createElement('div');
+                    info.className = 'card-info';
+                    info.innerHTML = `<div class="card-badge">Threads · ${item.type === 'video' ? 'Video' : 'Imagen'} ${i + 1}</div>`;
+                    info.appendChild(crearBotonDescarga(item.url, fileName));
+                    card.appendChild(info);
+                    const msgDiv = document.createElement('div');
+                    msgDiv.classList.add('message', 'bot-message');
+                    msgDiv.appendChild(card);
+                    chatMessages.appendChild(msgDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                });
+                return;
+            }
+            
             // --- YouTube Audio ---
             else if (plataforma === 'YouTubeAudio') {
                 if (!json.success) { addMessage('Error al procesar el audio de YouTube.', 'bot'); return; }
