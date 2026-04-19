@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 apiUrl = `https://api.delirius.store/download/ytmp3v2?url=${encodeURIComponent(urlVideo)}`;
                 break;
             case 'YouTubeVideo':
-                apiUrl = `https://api.delirius.store/download/ytmp4?url=${encodeURIComponent(urlVideo)}&format=360`;
+                apiUrl = `https://api.delirius.store/download/ytmp4?url=${encodeURIComponent(urlVideo)}&format=360p`;
                 break;
             default:
                 removeLoading();
