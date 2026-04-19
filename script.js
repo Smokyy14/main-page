@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (moonbotButton) {
     moonbotButton.addEventListener('click', () => {
-      window.open('./moonbot', '_blank');
+      window.open('./downloader', '_blank');
     });
   }
 
