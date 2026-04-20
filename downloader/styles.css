@@ -26,17 +26,18 @@ body {
 .page-wrapper {
     position: relative;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 24px;
     min-height: 100vh;
     padding: 24px 16px;
+    flex-wrap: wrap;
 }
 
 .contact-card {
-    position: absolute;
-    right: calc(50% - 410px);
-    top: 50%;
-    transform: translateY(-50%);
+    position: static;
+    transform: none;
 }
 
 .container {
@@ -377,6 +378,7 @@ h1 {
     .page-wrapper {
         flex-direction: column;
         align-items: center;
+        gap: 16px;
     }
     .contact-card {
         width: 100%;
