@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const moonbotButton = document.querySelector('.btn.primary');
   const projectsButton = document.querySelector('.btn.secondary');
-  const contactButton = document.querySelector('.btn.tertiary');
+  const donateButton = document.querySelector('.btn.tertiary');
 
   if (moonbotButton) {
     moonbotButton.addEventListener('click', () => {
@@ -16,13 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (contactButton) {
-  contactButton.addEventListener('click', () => {
-    window.open('https://wa.me/59895609705', '_blank');
-  });
-}
-
+  if (donateButton) {
+    donateButton.addEventListener('click', () => {
+      window.open('https://ko-fi.com/smokyydev', '_blank');
+    });
+  }
 });
-
-
-
